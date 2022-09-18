@@ -14,6 +14,7 @@
 #define LOWER    1
 #define RAISE    2
 #define BOTH     3
+#define NUMPAD   4
 
 / {
     conditional_layers {
@@ -32,21 +33,21 @@
 
 		default_layer {
 			bindings = <
-&mt LGUI ESC   &kp N1 &kp N2 &kp N3   &kp N4    &kp N5                       &kp N6    &kp N7   &kp N8    &kp N9  &kp N0   &kp BSLH
-&kp CAPS       &kp Q  &kp W  &kp E    &kp R     &kp T                        &kp Y     &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&mt LSHIFT TAB &kp A  &kp S  &kp D    &kp F     &kp G                        &kp H     &kp J    &kp K     &kp L   &kp SEMI &mt RSHIFT ENTER
-&mt LCTRL DEL  &kp Z  &kp X  &kp C    &kp V     &kp B    &trans    &trans    &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp SQT
-                             &kp LALT &mo LOWER &kp BSPC &kp SPACE &kp SPACE &mo RAISE &trans   &kp RALT
+&mt LGUI ESC   &kp N1 &kp N2 &kp N3   &kp N4    &kp N5                       &kp N6    &kp N7      &kp N8    &kp N9  &kp N0   &kp BSLH
+&kp CAPS       &kp Q  &kp W  &kp E    &kp R     &kp T                        &kp Y     &kp U       &kp I     &kp O   &kp P    &kp MINUS
+&mt LSHIFT TAB &kp A  &kp S  &kp D    &kp F     &kp G                        &kp H     &kp J       &kp K     &kp L   &kp SEMI &mt RSHIFT ENTER
+&mt LCTRL DEL  &kp Z  &kp X  &kp C    &kp V     &kp B    &trans    &trans    &kp N     &kp M       &kp COMMA &kp DOT &kp FSLH &kp SQT
+                             &kp LALT &mo LOWER &kp BSPC &kp SPACE &kp SPACE &mo RAISE &tog NUMPAD &kp RALT
 			>;
 		};
 
 		lower_layer {
 			bindings = <
-&trans &kp F1   &kp F2       &kp F3       &kp F4    &kp F5                  &kp F6   &kp F7   &kp F8 &kp F9    &kp F10  &trans   
-&trans &kp F11  &kp F12      &trans       &trans    &trans                  &trans   &trans   &trans &trans    &trans   &trans
-&trans &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp PG_UP &kp PG_DN               &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME &kp END
-&trans &trans   &trans       &trans       &trans    &trans    &trans &trans &trans   &trans   &trans &trans    &trans   &trans
-                             &trans       &trans    &trans    &trans &trans &trans   &trans   &trans
+&trans &kp F1   &kp F2       &kp F3       &kp F4    &kp F5                  &kp F6 &kp F7   &kp F8   &kp F9    &kp F10  &trans   
+&trans &kp F11  &kp F12      &trans       &trans    &trans                  &trans &trans   &kp UP   &trans    &trans   &trans
+&trans &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp PG_UP &kp PG_DN               &trans &kp LEFT &kp DOWN &kp RIGHT &kp HOME &kp END
+&trans &trans   &trans       &trans       &trans    &trans    &trans &trans &trans &trans   &trans   &trans    &trans   &trans
+                             &trans       &trans    &trans    &trans &trans &trans &trans   &trans
 			>;
 		};
 
@@ -69,5 +70,15 @@
                                                          &trans       &trans       &trans &trans &trans &trans &trans &trans
             		>;
         	};
+		
+		numpad_layer {
+			bindings = <
+&trans &trans &trans &trans &trans  &trans               &trans &kp N7 &kp N8  &kp N9 &kp KP_ASTERISK &trans
+&trans &trans &trans &trans &trans  &trans               &trans &kp N4 &kp N5  &kp N6 &kp KP_SLASH    &trans
+&trans &trans &trans &trans &trans  &trans               &trans &kp N1 &kp N2  &kp N3 &kp KP_MINUS    &trans
+&trans &trans &trans &trans &trans  &trans &trans &trans &trans &kp N0 &kp DOT &trans &kp KP_PLUS     &trans
+                     &trans &trans  &trans &trans &trans &trans &trans &trans
+			>;
+		};
 	};
 };
