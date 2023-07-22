@@ -16,6 +16,7 @@
 #define BOTH     3
 #define MIRROR   4
 #define MIRAISE   5
+#define MILOWER   6
 
 / {
     conditional_layers {
@@ -74,11 +75,11 @@
 		
 		mirror_layer {
 			bindings = <
-&mt LGUI BSLH    &kp N0   &kp N9  &kp N8    &kp N7  &kp N6                          &trans &kp N7 &kp N8  &kp N9 &kp KP_ASTERISK &trans
-&kp MINUS        &kp P    &kp O   &kp I     &kp U   &kp Y                           &trans &kp N4 &kp N5  &kp N6 &kp KP_SLASH    &trans
-&mt RSHIFT ENTER &kp SEMI &kp L   &kp K     &kp J   &kp H                           &trans &kp N1 &kp N2  &kp N3 &kp KP_MINUS    &trans
-&mt LCTRL SQT    &kp FSLH &kp DOT &kp COMMA &kp M   &kp N       &tog MIRROR  &trans &trans &kp N0 &kp DOT &trans &kp KP_PLUS     &trans
-                                  &trans    &trans  &mo MIRAISE &kp SPACE    &trans &trans &trans &trans
+&mt LGUI BSLH    &kp N0   &kp N9  &kp N8    &kp N7     &kp N6                          &trans &kp N7 &kp N8  &kp N9 &kp KP_ASTERISK &trans
+&kp MINUS        &kp P    &kp O   &kp I     &kp U      &kp Y                           &trans &kp N4 &kp N5  &kp N6 &kp KP_SLASH    &trans
+&mt RSHIFT ENTER &kp SEMI &kp L   &kp K     &kp J      &kp H                           &trans &kp N1 &kp N2  &kp N3 &kp KP_MINUS    &trans
+&mt LCTRL SQT    &kp FSLH &kp DOT &kp COMMA &kp M      &kp N       &tog MIRROR &trans &trans &kp N0 &kp DOT &trans &kp KP_PLUS     &trans
+                                  &kp LALT &mo MILOWER &mo MIRAISE &kp SPACE   &trans &trans &trans &trans
 			>;
 		};
 
@@ -91,6 +92,17 @@
                                      &trans           &trans     &trans    &trans &trans &trans    &trans    &trans
 			>;
 		};
+
+		mirror_lower_layer {
+			bindings = <
+&trans  &kp F10  &kp F9    &kp F8   &kp F7   &kp F6               &kp F6 &kp F7   &kp F8   &kp F9    &kp F10  &trans   
+&trans  &trans   &trans    &kp UP   &trans   &trans               &trans &trans   &kp UP   &trans    &trans   &trans
+&kp END &kp HOME &kp LEFT &kp DOWN &kp RIGHT &trans               &trans &kp LEFT &kp DOWN &kp RIGHT &kp HOME &kp END
+&trans  &trans   &trans    &trans   &trans   &trans &trans &trans &trans &trans   &trans   &trans    &trans   &trans
+                           &trans   &trans   &trans &trans &trans &trans &trans   &trans
+			>;
+		};
+
 
 	};
 };
