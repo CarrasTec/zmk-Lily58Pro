@@ -29,6 +29,10 @@
     };
 };
 
+&mt {
+    tapping-term-ms = <100>;
+};
+
 / {
     behaviors {
         mo_to: behavior_mo_to {
